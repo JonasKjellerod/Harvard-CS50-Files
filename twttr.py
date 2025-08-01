@@ -11,7 +11,8 @@ def shorten(word):
     for i in word:
         if i.lower() not in vowel:
             list.append(i)
-    return ''.join(list)
+    no_vowel_word = ''.join(list)
+    return no_vowel_word
 
 if __name__ == "__main__":
     main()

@@ -1,26 +1,29 @@
 def main():
-    a = get_fraction('Fraction: ')
-    if 1 < a < 99:
-        print(f'{a}%')
-    elif 1 >= a:
-        print('E')
-    elif 99 <= a:
-        print('F')
+    a = convert(input('Fraction: '))
+    print(gauge(a))
 
 
 
-def get_fraction(prompt):
+def convert(prompt):
     while True:
         try:
-            fraction = input(prompt).split('/')
+            fraction = prompt.split('/')
             x = int(fraction[0])
             y = int(fraction[1])
             if x/y <= 1:
                 return round((x/y)*100)
         except ValueError:
-            pass
+            raise ValueError
         except ZeroDivisionError:
-            pass
+            raise ZeroDivisionError
 
+def gauge(x):
+    if 1 < x < 99:
+        return f'{x}%'
+    elif 1 >= x:
+        return 'E'
+    elif 99 <= x:
+        return 'F'
 
-main()
+if __name__ == '__main__':
+    main()

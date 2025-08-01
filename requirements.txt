@@ -1,0 +1,6 @@
+pyttsx3
+requests
+rich
+pyfiglet
+unicodedata
+pytest
